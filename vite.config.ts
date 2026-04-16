@@ -9,7 +9,7 @@ export default defineConfig({
       VitePWA({
         injectRegister: 'auto',
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg', '.src/assets/react.svg', 'favicon.svg'],
         manifest: {
           name: 'pwa-test',
           short_name: 'pwa-test',
