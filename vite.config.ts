@@ -30,11 +30,8 @@ export default defineConfig({
             }
           ]
         },
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
-        },
         devOptions: {
-          enabled: true,
+          enabled: process.env.SW_DEV === 'true',
           type: 'module',
           navigateFallback: 'index.html',
         },
