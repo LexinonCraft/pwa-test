@@ -35,7 +35,6 @@ export default defineConfig({
           type: 'module',
           navigateFallback: 'index.html',
         },
-        base: '/pwa-test/'
     })
   ],
 })
