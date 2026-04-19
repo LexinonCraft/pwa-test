@@ -3,9 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { routeTree } from './routeTree.gen'
 import { createRouter, RouterProvider } from '@tanstack/react-router'
+import DatabaseProvider from './DatabaseProvider'
 
 // Set up a Router instance
-const router = createRouter({
+export const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
   scrollRestoration: true,
@@ -21,7 +22,9 @@ declare module '@tanstack/react-router' {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DatabaseProvider>
+      <RouterProvider router={router} />
+    </DatabaseProvider>
   </StrictMode>,
 )
 

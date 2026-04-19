@@ -5,5 +5,5 @@ export const Route = createFileRoute('/')({
 })
 
 function RouteComponent() {
-  return <div>Main page! <Link to="/about">Go to about page</Link></div>
+  return <div>Welcome to my PWA test app!</div>
 }

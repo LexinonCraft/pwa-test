@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -7,9 +6,14 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <React.Fragment>
-      <div>My App!</div>
+    <>
+      <h1>My App!</h1>
+      <div className="navbar">
+        <Link to="/" activeProps={{className: "active-link"}}>Home</Link>
+        <Link to="/about" activeProps={{className: "active-link"}}>About</Link>
+        <Link to="/tasks" activeProps={{className: "active-link"}}>Tasks</Link>
+      </div>
       <Outlet />
-    </React.Fragment>
+    </>
   )
 }
