@@ -41,8 +41,8 @@ function RouteComponent() {
 
   return <>
     {task ? <>
-      <h2>Task: {task.title}</h2>
-      <p>{task.description}</p>
+      <h2 className="text-3xl mb-3">Task: {task.title}</h2>
+      <p className="mb-3">{task.description}</p>
       <button onClick={handleDelete}>Delete</button>
     </> : <>Loading task...</>}
   </>
