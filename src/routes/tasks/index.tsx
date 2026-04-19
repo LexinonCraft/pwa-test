@@ -36,7 +36,7 @@ function RouteComponent() {
 
     const tx = db.transaction(storeName, "readwrite")
     const store = tx.objectStore(storeName)
-    const request = store.put({ id: uuidv4(), title: formData.get("title"), description: formData.get("description") })
+    store.put({ id: uuidv4(), title: formData.get("title"), description: formData.get("description") })
 
     fetchEntries()
   }
