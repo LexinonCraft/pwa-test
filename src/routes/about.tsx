@@ -5,5 +5,5 @@ export const Route = createFileRoute('/about')({
 })
 
 function RouteComponent() {
-  return <div>This is an app for testing VitePWA, Tanstack Router, IndexedDB and TailwindCSS.</div>
+  return <div>This is an app for testing VitePWA, Tanstack Router, IndexedDB, TailwindCSS and Shadcn.</div>
 }

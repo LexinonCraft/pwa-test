@@ -2,6 +2,10 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useContext, useEffect, useState } from 'react'
 import { DatabaseContext, storeName } from '../../db'
 import { v4 as uuidv4 } from 'uuid'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Field, FieldGroup, FieldLabel } from '@/components/ui/field'
 
 export const Route = createFileRoute('/tasks/')({
   component: RouteComponent,
@@ -49,12 +53,18 @@ function RouteComponent() {
       )}</ul>
       {entries.length == 0 && <p className="mb-3">You have no tasks yet. Create one below!</p>}
       <h3 className="text-2xl mb-3">Create new task</h3>
-      <form action={handleSubmit} className="new-task-form">
-        <label>Title</label>
-        <input type="text" name="title" className="bg-white text-black" />
-        <label>Description</label>
-        <textarea name="description" className="bg-white text-black" />
-        <button>Create</button>
+      <form action={handleSubmit} className="max-w-300">
+        <FieldGroup>
+          <Field>
+            <FieldLabel>Title</FieldLabel>
+            <Input type="text" name="title" className="bg-white text-black" />
+          </Field>
+          <Field>
+            <FieldLabel>Description</FieldLabel>
+            <Textarea name="description" className="bg-white text-black" />
+          </Field>
+          <Button>Create</Button>
+        </FieldGroup>
       </form>
     </>: "Connecting..."}
   </>

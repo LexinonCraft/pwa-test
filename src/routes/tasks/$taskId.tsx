@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useContext, useEffect, useState } from 'react'
 import { DatabaseContext, storeName } from '../../db'
 import { router } from '../../main'
+import { Button } from '@/components/ui/button'
 
 export const Route = createFileRoute('/tasks/$taskId')({
   component: RouteComponent,
@@ -43,7 +44,7 @@ function RouteComponent() {
     {task ? <>
       <h2 className="text-3xl mb-3">Task: {task.title}</h2>
       <p className="mb-3">{task.description}</p>
-      <button onClick={handleDelete}>Delete</button>
+      <Button onClick={handleDelete}>Delete</Button>
     </> : <>Loading task...</>}
   </>
 }

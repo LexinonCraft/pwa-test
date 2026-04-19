@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
@@ -5,5 +6,8 @@ export const Route = createFileRoute('/')({
 })
 
 function RouteComponent() {
-  return <div>Welcome to my PWA test app!</div>
+  return <div>
+    <p>Welcome to my PWA test app!</p>
+    <Button>This is a button!</Button>
+  </div>
 }
