@@ -14,6 +14,10 @@ function RouteComponent() {
   const db = useContext(DatabaseContext)
   const { taskId } = Route.useParams()
 
+  function goToOverview() {
+    router.navigate({ to: "/tasks" })
+  }
+
   useEffect(() => {
     if (!db)
       return
@@ -23,8 +27,12 @@ function RouteComponent() {
     const request = store.get(taskId)
 
     request.onsuccess = () => {
-      setTask(request.result)
+      if (request.result)
+        setTask(request.result)
+      else
+        goToOverview()
     }
+    request.onerror = goToOverview
   }, [db])
 
   function handleDelete() {

@@ -48,8 +48,8 @@ function RouteComponent() {
   return <>
     <h2 className="text-3xl mb-3">Tasks</h2>
     {db ? <>
-      <ul className="mb-3">{entries.map((entry) =>
-        <li key={entry.id}><Link to="/tasks/$taskId" params={{taskId: entry.id}}>{entry.title}</Link></li>
+      <ul className="mb-3 list-disc list-inside">{entries.map((entry) =>
+        <li key={entry.id}><Link to="/tasks/$taskId" params={{taskId: entry.id}} className="text-link">{entry.title}</Link></li>
       )}</ul>
       {entries.length == 0 && <p className="mb-3">You have no tasks yet. Create one below!</p>}
       <h3 className="text-2xl mb-3">Create new task</h3>
